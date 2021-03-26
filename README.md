@@ -1,8 +1,8 @@
-# _Template for Webpack_
+# _Currency Exchange_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _{Brief description of application}, March 26th 2021_
 
-#### By _**Name**_
+#### By _**Garrett Brown**_
 
 ## Description
 
