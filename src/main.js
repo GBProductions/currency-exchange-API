@@ -4,9 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import ExchangeService from './js/exchange-service';
 
+//Business Logic
 function getElements(response){
     if (response) {
-        $('.showConversion').text(`<p>${response}</p>`);
+        $('.showConversion').text(`${response}`);
     }
 }
 //Will clear input fields for user.
@@ -15,13 +16,14 @@ function clearFields() {
     $("#moneyInput").val("");
 }
 
+//UI Logic
 $("#submit").click(function(event){
     event.preventDefault();
     let country = $("#currencyInput").val();
-    let amount = $("#moneyInput").val();
+    let amount = parseInt($("#moneyInput").val());
     let USD = "USD";
     clearFields();
-    console.log(country , amount)
+    console.log(country , amount);
 
 
     ExchangeService.getExchange(USD)
