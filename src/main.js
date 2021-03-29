@@ -5,15 +5,26 @@ import './css/styles.css';
 import ExchangeService from './js/exchange-service';
 
 function getElements(response){
-    
+    if (response) {
+        $('.showConversion').text(`<p>${response}</p>`);
+    }
+}
+//Will clear input fields for user.
+function clearFields() {
+    $("#currencyInput").val("");
+    $("#moneyInput").val("");
 }
 
 $("#submit").click(function(event){
     event.preventDefault();
     let country = $("#currencyInput").val();
-    $("#currencyInput").val("");
+    let amount = $("#moneyInput").val();
+    let USD = "USD";
+    clearFields();
+    console.log(country , amount)
 
-    ExchangeService.getExchange(country)
+
+    ExchangeService.getExchange(USD)
         .then(function(response) {
             getElements(response);
         });
