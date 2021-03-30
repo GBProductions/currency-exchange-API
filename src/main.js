@@ -5,16 +5,16 @@ import './css/styles.css';
 import ExchangeService from './js/exchange-service';
 
 //Business Logic
-function getElements(response){
-    if (response) {
-        $('.showConversion').text(`${response}`);
-    }
+function getElements(response, country){
+    $('.showConversion').text(`${response.conversion_rates.country}`);
 }
+
 //Will clear input fields for user.
 function clearFields() {
     $("#currencyInput").val("");
     $("#moneyInput").val("");
 }
+
 
 //UI Logic
 $("#submit").click(function(event){
@@ -23,11 +23,11 @@ $("#submit").click(function(event){
     let amount = parseInt($("#moneyInput").val());
     let USD = "USD";
     clearFields();
-    console.log(country , amount);
+    console.log(amount);
 
 
     ExchangeService.getExchange(USD)
         .then(function(response) {
-            getElements(response);
+            getElements(response, country);
         });
 });
