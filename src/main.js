@@ -12,11 +12,10 @@ $("#submit").click(function(event){
     event.preventDefault();
     let country = $("#currencyInput").val();
     let amount = parseInt($("#moneyInput").val());
-    let USD = "USD";
     Clear.clearFields('');
 
 
-    ExchangeService.getExchange(USD)
+    ExchangeService.getExchange()
         .then(function(response) {
             Elements.getElements(response, country, amount);
         });
