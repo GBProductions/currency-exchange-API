@@ -5,8 +5,8 @@ import './css/styles.css';
 import ExchangeService from './js/exchange-service';
 
 //Business Logic
-function getElements(response, country){
-    $('.showConversion').text(`${response.conversion_rates.country}`);
+function getElements(response, country, amount){
+    $('.showConversion').text(amount * (`${response.conversion_rates[country]}`));
 }
 
 //Will clear input fields for user.
@@ -28,6 +28,6 @@ $("#submit").click(function(event){
 
     ExchangeService.getExchange(USD)
         .then(function(response) {
-            getElements(response, country);
+            getElements(response, country, amount);
         });
 });
