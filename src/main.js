@@ -21,3 +21,4 @@ $("#submit").click(function(event){
             Elements.getElements(response, country, amount);
         });
 });
+
