@@ -2,12 +2,8 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import ExchangeService from './js/exchange-service';
-
-//Business Logic
-function getElements(response, country, amount){
-    $('.showConversion').text(amount * (`${response.conversion_rates[country]}`));
-}
+import ExchangeService from './js/exchange-service.js';
+import Elements from './js/elements.js';
 
 //Will clear input fields for user.
 function clearFields() {
@@ -23,11 +19,11 @@ $("#submit").click(function(event){
     let amount = parseInt($("#moneyInput").val());
     let USD = "USD";
     clearFields();
-    console.log(amount);
 
 
     ExchangeService.getExchange(USD)
         .then(function(response) {
-            getElements(response, country, amount);
+            let final = Elements.getElements(response, country, amount);
+            $('.showConversion').text(`$${amount} USD is worth ${final} ${country}!`);
         });
 });
