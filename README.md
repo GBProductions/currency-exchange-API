@@ -1,12 +1,22 @@
 # _Currency Exchange_
 
-#### _Currency exchange program using exchange API._, March 26th 2021_
+#### _Currency exchange program using exchange API._
 
 #### By _**Garrett Brown**_
 
+##### _Created March 26th 2021_
+##### _Last Edited March 31th 2021_
+
 ## Description
 
-_This program will convert USD into other currencies._
+_This program will convert USD into other currencies, currently including the following:_
+
+* AED
+* AFN
+* ALL
+* AMD
+* ANG
+
 
 ## Setup/Installation Requirements
 
@@ -31,7 +41,8 @@ _For support, contact Garrett Brown <garrettpaulbrown@gmail.com>_
 * _HTML, CSS, JS_
 * _Bootstrap, JQuery_
 * _VS Code, GitHub_
-* _Jest_
+* _https://www.exchangerate-api.com/_
+* _Webpack_
 
 ### License
 
