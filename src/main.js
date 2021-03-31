@@ -18,7 +18,6 @@ $("#submit").click(function(event){
 
     ExchangeService.getExchange(USD)
         .then(function(response) {
-            let final = Elements.getElements(response, country, amount);
-            $('.showConversion').text(`$${amount} USD is worth ${final} ${country}!`);
+            Elements.getElements(response, country, amount);
         });
 });
