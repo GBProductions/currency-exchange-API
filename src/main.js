@@ -17,7 +17,8 @@ $("#submit").click(function(event){
 
     ExchangeService.getExchange()
         .then(function(response) {
-            Elements.getElements(response, country, amount);
+            let final = Math.round((amount * (`${response.conversion_rates[country]}`)));
+            Elements.getElements(country, amount, final);
         });
 });
 

@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 export default class ExchangeService {
     static getExchange() {
         return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
@@ -10,9 +8,7 @@ export default class ExchangeService {
                 return response.json();
             })
             .catch(function(error) {
-                $(".showErrors").text(error);
                 return error;
-
             });
     }
 }
