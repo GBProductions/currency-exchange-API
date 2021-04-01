@@ -3,8 +3,8 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import ExchangeService from './js/exchange-service.js';
-import Elements from './js/elements.js';
-import Clear from './js/clear.js';
+import Elements from './UI-logic/elements.js';
+import Clear from './UI-logic/clear.js';
 
 
 //UI Logic
