@@ -16,9 +16,11 @@ $("#submit").click(function(event){
 
 
     ExchangeService.getExchange()
-        .then(function(response) {
-            let final = Math.round((amount * (`${response.conversion_rates[country]}`)));
-            Elements.getElements(country, amount, final);
-        });
-});
-
+    .then(function(response) {
+        let final = Math.round((amount * (`${response.conversion_rates[country]}`)));
+        Elements.getElements(country, amount, final);
+    })
+    .catch(function(error) {
+        $('.showErrors').text(`${error}`);
+      });
+    });
